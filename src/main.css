@@ -1,11 +1,18 @@
 body {
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-    
-    --primary-color: #CB201C;
-    
-    max-width: 400px;
-    margin: 0 auto;
-    height: 100vh;
-    background-color: #FFF9E6;
-    font-family: 'Inter', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+  --primary-color: #CB201C;
+  --inactive-color: #5C5F66;
+
+  max-width: 400px;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #FFF9E6;
+  color: var(--inactive-color);
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  color: var(--inactive-color);
+  text-decoration: none;
 }

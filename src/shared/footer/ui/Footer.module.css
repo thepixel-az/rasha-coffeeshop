@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
