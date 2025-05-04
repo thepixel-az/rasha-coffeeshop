@@ -1,0 +1,10 @@
+.header {
+    width: 100%;
+}
+
+.header img {
+    display: block; /* Removes extra space below the image */
+    width: 100%; /* Ensures the image takes up the full width */
+    height: auto; /* Maintains the aspect ratio */
+    object-fit: cover; /* Ensures the image covers the container if needed */
+}

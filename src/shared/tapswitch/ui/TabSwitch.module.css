@@ -1,0 +1,19 @@
+.tabSwitch {
+    width: 100%;
+    display: flex;
+}
+
+.tabSwitch button {
+    flex: 1;
+    text-align: center;
+
+    border: none;
+    background: transparent;
+
+    color: var(--primary-color)
+}
+
+.tabSwitch button.active {
+    font-weight: bold;
+    border-bottom: 2px solid var(--primary-color);
+}
