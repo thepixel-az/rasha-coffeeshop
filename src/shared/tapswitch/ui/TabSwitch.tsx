@@ -7,6 +7,18 @@ type TabSwitchProps = React.DetailedHTMLProps<
   HTMLDivElement
 >;
 
+type TabButtonProps = React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+> & {
+  active?: boolean;
+}
+
+const Button: FC<TabButtonProps> = ({ children, active, className, ...props }) => {
+  return <button {...props} className={`${active ? styles.active : ""} ${className ? className : ""}`}>{children}</button>;
+
+}
+
 const TabSwitch: FC<TabSwitchProps> = ({ children, ...props }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeTab, setActiveTab] = useState<string>("drinks");
@@ -26,18 +38,18 @@ const TabSwitch: FC<TabSwitchProps> = ({ children, ...props }) => {
   return (
     <div {...props}>
       <div className={styles.tabSwitch}>
-        <button
-          className={activeTab === "drinks" ? styles.active : ""}
+        <Button
+          active={activeTab === "drinks"}
           onClick={() => handleTabClick("drinks")}
         >
-          Drinks
-        </button>
-        <button
-          className={activeTab === "food" ? styles.active : ""}
-          onClick={() => handleTabClick("food")}
+          İçkilər
+        </Button>
+        <Button
+          active={activeTab === "foods"}
+          onClick={() => handleTabClick("foods")}
         >
-          Food
-        </button>
+          Yeməklər
+        </Button>
       </div>
       {children}
     </div>

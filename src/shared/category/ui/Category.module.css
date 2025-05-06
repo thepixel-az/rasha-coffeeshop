@@ -1,0 +1,13 @@
+.category {
+}
+
+.category__buttons {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+
+  display: flex;
+  gap: .5rem;
+  width: 100%;
+}

@@ -16,20 +16,22 @@ const footerLinks = [
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.footer__div}>
+      <div className={`${styles.footer__div} ${styles.footer__div__logo}`}>
         <img src="/header-logo.png" alt="Logo" />
-        {footerLinks[0].map((Link, index) => (
-          <a key={index} href={Link.link} className={styles.footerLink}>
-            {Link.name}
-          </a>
-        ))}
-        <div>
-          <img src="/facebook.svg" alt="Logo" />
-          <img src="/instagram.svg" alt="Logo" />
+        <div className={styles.footer__div__logo__text}>
+          {footerLinks[0].map((Link, index) => (
+            <a key={index} href={Link.link} className={styles.footerLink}>
+              {Link.name}
+            </a>
+          ))}
+          <div className={styles.footer__div__logo__text__social}>
+            <img src="/facebook.svg" alt="Logo" />
+            <img src="/instagram.svg" alt="Logo" />
+          </div>
         </div>
       </div>
       <div className={styles.footer__div}>
-        <div>
+        <div className={styles.footer__div__links}>
           {footerLinks[1].map((Link, index) => (
             <a key={index} href={Link.link} className={styles.footerLink}>
               {Link.name}

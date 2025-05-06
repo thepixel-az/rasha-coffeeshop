@@ -1,18 +1,32 @@
-body {
-  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@font-face {
+  font-family: "DM Sans";
+  src: url("/DMSans-VariableFont.woff2") format("woff2-variations"),
+       url("/DMSans-VariableFont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
+body {
   --primary-color: #CB201C;
   --inactive-color: #5C5F66;
+  --border-line-color: #E6E6E6;
 
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   height: 100vh;
   background-color: #FFF9E6;
   color: var(--inactive-color);
-  font-family: 'Inter', sans-serif;
 }
 
 a {
   color: var(--inactive-color);
   text-decoration: none;
+}
+
+.main-page {
+  margin: 0 10px;
+}
+
+span, button, a, h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Sans", sans-serif;
 }

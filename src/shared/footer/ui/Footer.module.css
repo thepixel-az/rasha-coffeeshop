@@ -1,11 +1,40 @@
 .footer {
   display: flex;
   flex-direction: column;
+  border-top: 2px solid var(--border-line-color);
+  padding: 1rem 0;
 }
 
-.footer__div {
+.footer__div, .footer__div__logo__text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.footer__div__logo {
+  border-bottom: 2px solid var(--border-line-color);
+}
+
+.footer__div__logo__text {
+  padding: 2rem 0;
+}
+
+.footer__div__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.footer__div__logo__text {
+  gap: 1rem;
+}
+
+.footer__div__logo__text__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
