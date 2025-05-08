@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Footer.module.css";
+import "./Footer.css";
 
 const footerLinks = [
   [
@@ -15,25 +15,25 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <div className={`${styles.footer__div} ${styles.footer__div__logo}`}>
+    <footer className="footer">
+      <div className="footer__div footer__div__logo">
         <img src="/header-logo.png" alt="Logo" />
-        <div className={styles.footer__div__logo__text}>
+        <div className="footer__div__logo__text">
           {footerLinks[0].map((Link, index) => (
-            <a key={index} href={Link.link} className={styles.footerLink}>
+            <a key={index} href={Link.link} className="footerLink">
               {Link.name}
             </a>
           ))}
-          <div className={styles.footer__div__logo__text__social}>
+          <div className="footer__div__logo__text__social">
             <img src="/facebook.svg" alt="Logo" />
             <img src="/instagram.svg" alt="Logo" />
           </div>
         </div>
       </div>
-      <div className={styles.footer__div}>
-        <div className={styles.footer__div__links}>
+      <div className="footer__div">
+        <div className="footer__div__links">
           {footerLinks[1].map((Link, index) => (
-            <a key={index} href={Link.link} className={styles.footerLink}>
+            <a key={index} href={Link.link} className="footerLink">
               {Link.name}
             </a>
           ))}

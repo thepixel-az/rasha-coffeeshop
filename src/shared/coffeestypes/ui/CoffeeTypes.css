@@ -1,0 +1,39 @@
+.coffee__type__button {
+  margin-top: 1rem;
+  padding: 1.6rem 0;
+  border: none;
+  border-bottom: 2px solid var(--inactive-border-color);
+  background: transparent;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: none;
+}
+
+.coffee__type__button img {
+  max-height: 110px;
+  object-fit: contain;
+}
+
+.coffee__type__button span {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: black;
+  margin-top: 0.5rem;
+}
+
+.coffee__type__active {
+  border: 2px solid var(--primary-color) !important;
+  border-radius: 1rem;
+}
+
+.coffee__types {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}

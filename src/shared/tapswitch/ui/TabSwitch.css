@@ -1,12 +1,12 @@
-.tabSwitch {
+.tab_switch  {
   width: 100%;
   display: flex;
 
   padding: 1rem 0;
-  border-bottom: 2px solid var(--border-line-color);
+  border-bottom: 1px solid var(--border-line-color);
 }
 
-.tabSwitch button {
+.tab_switch button {
   flex: 1;
   text-align: center;
 
@@ -18,11 +18,14 @@
   padding: .6rem;
   font-size: medium;
 
-  color: var(--inactive-color)
+  color: var(--inactive-color);
 }
 
-.active {
-  font-weight: bold;
+.tab_switch .active {
   color: var(--primary-color) !important;
-  border-bottom: 2px solid var(--primary-color) !important;
+  border-bottom: 1px solid var(--primary-color) !important;
+}
+
+.tab_switch__container {
+  margin: 0 10px;
 }

@@ -9,6 +9,7 @@
 body {
   --primary-color: #CB201C;
   --inactive-color: #5C5F66;
+  --inactive-border-color: #97979773;
   --border-line-color: #E6E6E6;
 
   max-width: 500px;
@@ -23,10 +24,10 @@ a {
   text-decoration: none;
 }
 
-.main-page {
-  margin: 0 10px;
-}
-
 span, button, a, h1, h2, h3, h4, h5, h6 {
   font-family: "DM Sans", sans-serif;
+}
+
+button {
+  transition: all 0.2s ease-in-out;
 }
