@@ -2,12 +2,19 @@
   font-family: "DM Sans";
   src: url("/DMSans-VariableFont.woff2") format("woff2-variations"),
        url("/DMSans-VariableFont.woff") format("woff");
-  font-weight: normal;
+  font-weight: 100 900;
   font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   --primary-color: #CB201C;
+  --primary-low-color: #CB201C40;
   --inactive-color: #5C5F66;
   --inactive-border-color: #97979773;
   --border-line-color: #E6E6E6;
@@ -19,12 +26,17 @@ body {
   color: var(--inactive-color);
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 a {
   color: var(--inactive-color);
   text-decoration: none;
 }
 
-span, button, a, h1, h2, h3, h4, h5, h6 {
+span, button, a, h1, h2, h3, h4, h5, h6, p, li, input::placeholder, input, label {
   font-family: "DM Sans", sans-serif;
 }
 

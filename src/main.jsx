@@ -8,4 +8,3 @@ createRoot(document.getElementById("root")).render(
     <App />
   </StrictMode>
 );
-// https://lpkv5h80-5173.euw.devtunnels.ms/

@@ -1,0 +1,55 @@
+.season__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 140px;
+}
+
+.season__content {
+  padding-inline: 10px;
+}
+
+.season__images {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.season__image__container {
+  flex: 0 0 100%;
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+.season__image__container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.season__title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: .2rem;
+  color: var(--primary-color);
+  text-align: center;
+  padding-bottom: 15px;
+  transform: scaleY(1.1);
+
+  border-bottom: 1px solid var(--inactive-color);
+}
+
+.season__lines {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+}

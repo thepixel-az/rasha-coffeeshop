@@ -1,73 +1,365 @@
+/// <reference types="vite/client" />
+
 import { create } from 'zustand';
 import axios from 'axios';
 
-interface MenuItem {
+export interface MenuItem {
   name: string;
   description: string;
+  ingredient: string;
   price: number;
-  isColdCoffee: boolean;
-  categoryId: number;
+  isCold: boolean;
+  imageUrl: string;
   id: number;
+  cardType: "sticky" | "normal";
+  subcategoryId: number;
   createdAt: string;
   updatedAt: string;
 }
 
-interface MenuCategory {
+interface Subcategory {
   name: string;
-  description: string;
+  isDropbox: boolean;
   id: number;
-  items: MenuItem[];
+  query: string;
+  categoryId: number;
+  menuItems: MenuItem[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface Category {
+  name: string;
+  query: string;
+  id: number;
+  subcategories: Subcategory[];
   createdAt: string;
   updatedAt: string;
 }
 
 interface MenuStore {
-  categories: MenuCategory[];
+  categories: Category[];
   isLoading: boolean;
   error: string | null;
   fetchMenu: () => Promise<void>;
+  getCategoryById: (id: number) => Category | undefined;
+  getSubcategoryById: (categoryId: number, subcategoryId: number) => Subcategory | undefined;
+  getMenuItemById: (categoryId: number, subcategoryId: number, menuItemId: number) => MenuItem | undefined;
 }
 
-const initialState: MenuStore = {
-  categories: [],
-  isLoading: false,
-  error: null,
-  fetchMenu: async () => {},
-};
+const testData: Category[] = [
+  {
+    id: 1,
+    name: "Drinks",
+    query: "drinks",
+    subcategories: [
+      {
+        id: 1,
+        name: "Espresso Bar",
+        isDropbox: true,
+        query: "espressobar",
+        categoryId: 1,
+        menuItems: [
+          {
+            id: 1,
+            name: "Espresso",
+            description: "Strong and concentrated coffee",
+            ingredient: "Coffee beans, hot water",
+            price: 3.50,
+            isCold: false,
+            cardType: "sticky",
+            imageUrl: "/images/espresso.jpg",
+            subcategoryId: 1,
+            createdAt: "2024-03-20T10:00:00Z",
+            updatedAt: "2024-03-20T10:00:00Z"
+          },
+          {
+            id: 2,
+            name: "Americano",
+            description: "Espresso with hot water",
+            ingredient: "Espresso, hot water",
+            price: 4.00,
+            isCold: false,
+            cardType: "sticky",
+            imageUrl: "/images/americano.jpg",
+            subcategoryId: 1,
+            createdAt: "2024-03-20T10:00:00Z",
+            updatedAt: "2024-03-20T10:00:00Z"
+          },
+          {
+            id: 3,
+            name: "Iced Americano",
+            description: "Chilled espresso with water and ice",
+            ingredient: "Espresso, cold water, ice",
+            price: 4.50,
+            isCold: true,
+            cardType: "sticky",
+            imageUrl: "/images/iced-americano.jpg",
+            subcategoryId: 1,
+            createdAt: "2024-03-21T10:00:00Z",
+            updatedAt: "2024-03-21T10:00:00Z"
+          },
+          {
+            id: 4,
+            name: "Iced Latte",
+            description: "Cold milk with espresso and ice",
+            ingredient: "Espresso, milk, ice",
+            price: 5.00,
+            isCold: true,
+            cardType: "sticky",
+            imageUrl: "/images/iced-latte.jpg",
+            subcategoryId: 1,
+            createdAt: "2024-03-21T10:00:00Z",
+            updatedAt: "2024-03-21T10:00:00Z"
+          }
+        ],
+        createdAt: "2024-03-20T10:00:00Z",
+        updatedAt: "2024-03-20T10:00:00Z"
+      },
+      {
+        id: 2,
+        name: "Herbal Teas",
+        isDropbox: false,
+        query: "herbaltea",
+        categoryId: 1,
+        menuItems: [
+          {
+            id: 5,
+            name: "Chamomile Tea",
+            description: "Relaxing herbal infusion",
+            ingredient: "Chamomile flowers, hot water",
+            price: 3.00,
+            isCold: false,
+            cardType: "normal",
+            imageUrl: "/images/chamomile.jpg",
+            subcategoryId: 2,
+            createdAt: "2024-03-22T10:00:00Z",
+            updatedAt: "2024-03-22T10:00:00Z"
+          },
+          {
+            id: 6,
+            name: "Mint Tea",
+            description: "Refreshing herbal tea",
+            ingredient: "Mint leaves, hot water",
+            price: 3.00,
+            isCold: false,
+            cardType: "normal",
+            imageUrl: "/images/mint-tea.jpg",
+            subcategoryId: 2,
+            createdAt: "2024-03-22T10:00:00Z",
+            updatedAt: "2024-03-22T10:00:00Z"
+          }
+        ],
+        createdAt: "2024-03-22T10:00:00Z",
+        updatedAt: "2024-03-22T10:00:00Z"
+      },
+      {
+        id: 3,
+        name: "Smoothies",
+        isDropbox: false,
+        query: "smoothies",
+        categoryId: 1,
+        menuItems: [
+          {
+            id: 7,
+            name: "Berry Blast",
+            description: "Mixed berries smoothie",
+            ingredient: "Strawberries, blueberries, yogurt, honey",
+            price: 6.00,
+            isCold: true,
+            cardType: "normal",
+            imageUrl: "/images/berry-blast.jpg",
+            subcategoryId: 3,
+            createdAt: "2024-03-23T10:00:00Z",
+            updatedAt: "2024-03-23T10:00:00Z"
+          },
+          {
+            id: 8,
+            name: "Mango Madness",
+            description: "Mango smoothie with coconut milk",
+            ingredient: "Mango, coconut milk, ice",
+            price: 6.50,
+            isCold: true,
+            cardType: "normal",
+            imageUrl: "/images/mango-smoothie.jpg",
+            subcategoryId: 3,
+            createdAt: "2024-03-23T10:00:00Z",
+            updatedAt: "2024-03-23T10:00:00Z"
+          }
+        ],
+        createdAt: "2024-03-23T10:00:00Z",
+        updatedAt: "2024-03-23T10:00:00Z"
+      },
+      {
+        id: 6,
+        name: "Smoothies2",
+        isDropbox: false,
+        query: "smoothies2",
+        categoryId: 1,
+        menuItems: [
+          {
+            id: 7,
+            name: "Berry Blast",
+            description: "Mixed berries smoothie",
+            ingredient: "Strawberries, blueberries, yogurt, honey",
+            price: 6.00,
+            isCold: true,
+            cardType: "normal",
+            imageUrl: "/images/berry-blast.jpg",
+            subcategoryId: 3,
+            createdAt: "2024-03-23T10:00:00Z",
+            updatedAt: "2024-03-23T10:00:00Z"
+          },
+          {
+            id: 8,
+            name: "Mango Madness",
+            description: "Mango smoothie with coconut milk",
+            ingredient: "Mango, coconut milk, ice",
+            price: 6.50,
+            isCold: true,
+            cardType: "normal",
+            imageUrl: "/images/mango-smoothie.jpg",
+            subcategoryId: 3,
+            createdAt: "2024-03-23T10:00:00Z",
+            updatedAt: "2024-03-23T10:00:00Z"
+          }
+        ],
+        createdAt: "2024-03-23T10:00:00Z",
+        updatedAt: "2024-03-23T10:00:00Z"
+      }
+    ],
+    createdAt: "2024-03-20T10:00:00Z",
+    updatedAt: "2024-03-20T10:00:00Z"
+  },
+  {
+    id: 2,
+    name: "Food",
+    query: "food",
+    subcategories: [
+      {
+        id: 4,
+        name: "Main Dishes",
+        isDropbox: false,
+        query: "maindishes",
+        categoryId: 2,
+        menuItems: [
+          {
+            id: 9,
+            name: "Plov",
+            description: "Traditional Azerbaijani rice dish",
+            ingredient: "Rice, lamb, onion, carrot, spices",
+            price: 15.00,
+            isCold: false,
+            cardType: "normal",
+            imageUrl: "/images/plov.jpg",
+            subcategoryId: 4,
+            createdAt: "2024-03-20T10:00:00Z",
+            updatedAt: "2024-03-20T10:00:00Z"
+          },
+          {
+            id: 10,
+            name: "Dolma",
+            description: "Stuffed grape leaves",
+            ingredient: "Grape leaves, rice, minced meat, herbs",
+            price: 12.00,
+            isCold: false,
+            cardType: "normal",
+            imageUrl: "/images/dolma.jpg",
+            subcategoryId: 4,
+            createdAt: "2024-03-20T10:00:00Z",
+            updatedAt: "2024-03-20T10:00:00Z"
+          }
+        ],
+        createdAt: "2024-03-20T10:00:00Z",
+        updatedAt: "2024-03-20T10:00:00Z"
+      },
+      {
+        id: 5,
+        name: "Desserts",
+        isDropbox: false,
+        query: "desserts",
+        categoryId: 2,
+        menuItems: [
+          {
+            id: 11,
+            name: "Baklava",
+            description: "Sweet layered pastry with nuts and syrup",
+            ingredient: "Phyllo dough, walnuts, honey syrup",
+            price: 6.00,
+            isCold: false,
+            cardType: "normal",
+            imageUrl: "/images/baklava.jpg",
+            subcategoryId: 5,
+            createdAt: "2024-03-23T10:00:00Z",
+            updatedAt: "2024-03-23T10:00:00Z"
+          },
+          {
+            id: 12,
+            name: "Shekerbura",
+            description: "Sweet pastry filled with nuts",
+            ingredient: "Flour, nuts, sugar",
+            price: 5.00,
+            isCold: false,
+            cardType: "normal",
+            imageUrl: "/images/shekerbura.jpg",
+            subcategoryId: 5,
+            createdAt: "2024-03-23T10:00:00Z",
+            updatedAt: "2024-03-23T10:00:00Z"
+          }
+        ],
+        createdAt: "2024-03-23T10:00:00Z",
+        updatedAt: "2024-03-23T10:00:00Z"
+      }
+    ],
+    createdAt: "2024-03-20T10:00:00Z",
+    updatedAt: "2024-03-20T10:00:00Z"
+  }
+];
+
 
 // Create axios instance with default config
 const api = axios.create({
-  baseURL: '/api', // Using relative URL that will be proxied
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3000',
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
+    'X-Requested-With': 'XMLHttpRequest',
+    'ngrok-skip-browser-warning': 'true'
   },
-  maxRedirects: 5,
-  validateStatus: function (status) {
-    return status >= 200 && status < 400; // Accept 2xx and 3xx status codes
-  }
+  withCredentials: true
 });
 
-export const useMenuStore = create<MenuStore>((set) => ({
-  ...initialState,
+const useMenuStore = create<MenuStore>((set, get) => ({
+  categories: [],
+  isLoading: false,
+  error: null,
+
   fetchMenu: async () => {
+    set({ isLoading: true, error: null });
     try {
-      set({ isLoading: true, error: null });
-      const response = await api.get<MenuCategory[]>('/v1/menu');
-      const data = response.data;
-      
-      if (!Array.isArray(data)) {
-        throw new Error('Invalid response format: expected an array');
-      }
-      
-      set({ categories: data, isLoading: false });
+      // const response = await api.get<Category[]>('/menu');
+      set({ categories: testData, isLoading: false });
     } catch (error) {
-      console.error('Menu fetch error:', error);
       set({ 
-        error: error instanceof Error ? error.message : 'Failed to fetch menu', 
-        isLoading: false,
-        categories: [] // Reset categories on error
+        error: error instanceof Error ? error.message : 'An unknown error occurred', 
+        isLoading: false 
       });
     }
   },
+
+  getCategoryById: (id: number) => {
+    return get().categories.find(category => category.id === id);
+  },
+
+  getSubcategoryById: (categoryId: number, subcategoryId: number) => {
+    const category = get().getCategoryById(categoryId);
+    return category?.subcategories.find(sub => sub.id === subcategoryId);
+  },
+
+  getMenuItemById: (categoryId: number, subcategoryId: number, menuItemId: number) => {
+    const subcategory = get().getSubcategoryById(categoryId, subcategoryId);
+    return subcategory?.menuItems.find(item => item.id === menuItemId);
+  }
 })); 
+
+export default useMenuStore;
