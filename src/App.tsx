@@ -7,11 +7,13 @@ import { Contact } from './pages/Contact'
 import { ProductService } from './pages/ProductService'
 import { PrivacyPolicy } from './pages/PrivacyPolicy'
 import { Legal } from './pages/Legal'
+import NotFound from './pages/NotFound'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <LandingPageLayout />,
+    errorElement: <NotFound />,
     children: [
       {
         path: '/',
