@@ -22,7 +22,6 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 0 10px 10px;
-  width: max-content;
 }
 
 .sticky-item__info__name {
@@ -66,21 +65,6 @@
   place-self: center;
 }
 
-.sticky-item__info__price__text {
-  border: 1px solid var(--primary-low-color);
-  border-radius: 10px;
-  line-height: 1rem;
-  padding: .45rem .70rem;
-  color: #414141;
-  display: flex;
-  font-weight: 500;
-  width: max-content;
-  gap: 5px;
-}
 .sticky-item__ingridients{
   text-wrap: letter;
-}
-
-.sticky-item__info__price__text__icon {
-  width: 14px;
 }

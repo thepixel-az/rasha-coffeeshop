@@ -1,0 +1,24 @@
+.price__text {
+  border-radius: 10px;
+  line-height: 1rem;
+  padding: .45rem .70rem;
+  display: flex;
+  font-weight: 500;
+  width: max-content;
+  gap: 5px;
+}
+
+.price__container {
+  width: 53px;
+  height: 32px;
+}
+
+.dark__price__container {
+  border: 1px solid var(--primary-low-color);
+  color: #414141;
+}
+
+.light__price__container {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}

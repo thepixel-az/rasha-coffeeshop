@@ -111,6 +111,19 @@ const testData: Category[] = [
             subcategoryId: 1,
             createdAt: "2024-03-21T10:00:00Z",
             updatedAt: "2024-03-21T10:00:00Z"
+          },
+          {
+            id: 15,
+            name: "Flat White",
+            description: "Smooth espresso with steamed milk",
+            ingredient: "Espresso, steamed milk",
+            price: 4.50,
+            isCold: false,
+            cardType: "sticky",
+            imageUrl: "/images/flat-white.jpg",
+            subcategoryId: 1,
+            createdAt: "2024-04-01T10:00:00Z",
+            updatedAt: "2024-04-01T10:00:00Z"
           }
         ],
         createdAt: "2024-03-20T10:00:00Z",
@@ -148,6 +161,19 @@ const testData: Category[] = [
             subcategoryId: 2,
             createdAt: "2024-03-22T10:00:00Z",
             updatedAt: "2024-03-22T10:00:00Z"
+          },
+          {
+            id: 16,
+            name: "Ginger Lemon Tea",
+            description: "Spicy ginger and zesty lemon infusion",
+            ingredient: "Ginger, lemon, hot water",
+            price: 3.50,
+            isCold: false,
+            cardType: "normal",
+            imageUrl: "/images/ginger-lemon-tea.jpg",
+            subcategoryId: 2,
+            createdAt: "2024-04-02T10:00:00Z",
+            updatedAt: "2024-04-02T10:00:00Z"
           }
         ],
         createdAt: "2024-03-22T10:00:00Z",
@@ -185,6 +211,19 @@ const testData: Category[] = [
             subcategoryId: 3,
             createdAt: "2024-03-23T10:00:00Z",
             updatedAt: "2024-03-23T10:00:00Z"
+          },
+          {
+            id: 17,
+            name: "Green Detox",
+            description: "Healthy green smoothie",
+            ingredient: "Spinach, apple, banana, almond milk",
+            price: 6.50,
+            isCold: true,
+            cardType: "normal",
+            imageUrl: "/images/green-detox.jpg",
+            subcategoryId: 3,
+            createdAt: "2024-04-03T10:00:00Z",
+            updatedAt: "2024-04-03T10:00:00Z"
           }
         ],
         createdAt: "2024-03-23T10:00:00Z",
@@ -198,7 +237,7 @@ const testData: Category[] = [
         categoryId: 1,
         menuItems: [
           {
-            id: 7,
+            id: 9,
             name: "Berry Blast",
             description: "Mixed berries smoothie",
             ingredient: "Strawberries, blueberries, yogurt, honey",
@@ -211,7 +250,7 @@ const testData: Category[] = [
             updatedAt: "2024-03-23T10:00:00Z"
           },
           {
-            id: 8,
+            id: 10,
             name: "Mango Madness",
             description: "Mango smoothie with coconut milk",
             ingredient: "Mango, coconut milk, ice",
@@ -222,6 +261,19 @@ const testData: Category[] = [
             subcategoryId: 3,
             createdAt: "2024-03-23T10:00:00Z",
             updatedAt: "2024-03-23T10:00:00Z"
+          },
+          {
+            id: 18,
+            name: "Peach Sunrise",
+            description: "Peach and orange smoothie",
+            ingredient: "Peach, orange juice, ice",
+            price: 5.75,
+            isCold: true,
+            cardType: "normal",
+            imageUrl: "/images/peach-sunrise.jpg",
+            subcategoryId: 3,
+            createdAt: "2024-04-03T10:00:00Z",
+            updatedAt: "2024-04-03T10:00:00Z"
           }
         ],
         createdAt: "2024-03-23T10:00:00Z",
@@ -244,7 +296,7 @@ const testData: Category[] = [
         categoryId: 2,
         menuItems: [
           {
-            id: 9,
+            id: 11,
             name: "Plov",
             description: "Traditional Azerbaijani rice dish",
             ingredient: "Rice, lamb, onion, carrot, spices",
@@ -257,7 +309,7 @@ const testData: Category[] = [
             updatedAt: "2024-03-20T10:00:00Z"
           },
           {
-            id: 10,
+            id: 12,
             name: "Dolma",
             description: "Stuffed grape leaves",
             ingredient: "Grape leaves, rice, minced meat, herbs",
@@ -268,6 +320,19 @@ const testData: Category[] = [
             subcategoryId: 4,
             createdAt: "2024-03-20T10:00:00Z",
             updatedAt: "2024-03-20T10:00:00Z"
+          },
+          {
+            id: 19,
+            name: "Kebab",
+            description: "Grilled meat skewers",
+            ingredient: "Lamb, spices, vegetables",
+            price: 14.00,
+            isCold: false,
+            cardType: "normal",
+            imageUrl: "/images/kebab.jpg",
+            subcategoryId: 4,
+            createdAt: "2024-04-04T10:00:00Z",
+            updatedAt: "2024-04-04T10:00:00Z"
           }
         ],
         createdAt: "2024-03-20T10:00:00Z",
@@ -281,7 +346,7 @@ const testData: Category[] = [
         categoryId: 2,
         menuItems: [
           {
-            id: 11,
+            id: 13,
             name: "Baklava",
             description: "Sweet layered pastry with nuts and syrup",
             ingredient: "Phyllo dough, walnuts, honey syrup",
@@ -294,7 +359,7 @@ const testData: Category[] = [
             updatedAt: "2024-03-23T10:00:00Z"
           },
           {
-            id: 12,
+            id: 14,
             name: "Shekerbura",
             description: "Sweet pastry filled with nuts",
             ingredient: "Flour, nuts, sugar",
@@ -305,6 +370,19 @@ const testData: Category[] = [
             subcategoryId: 5,
             createdAt: "2024-03-23T10:00:00Z",
             updatedAt: "2024-03-23T10:00:00Z"
+          },
+          {
+            id: 20,
+            name: "Pahlava",
+            description: "Crispy pastry with sweet syrup",
+            ingredient: "Pastry dough, nuts, syrup",
+            price: 6.50,
+            isCold: false,
+            cardType: "normal",
+            imageUrl: "/images/pahlava.jpg",
+            subcategoryId: 5,
+            createdAt: "2024-04-05T10:00:00Z",
+            updatedAt: "2024-04-05T10:00:00Z"
           }
         ],
         createdAt: "2024-03-23T10:00:00Z",
@@ -315,6 +393,7 @@ const testData: Category[] = [
     updatedAt: "2024-03-20T10:00:00Z"
   }
 ];
+
 
 
 // Create axios instance with default config

@@ -1,4 +1,5 @@
 import Button from "./button";
+import Price from "./price";
 
-export { Button };
+export { Button, Price };
 

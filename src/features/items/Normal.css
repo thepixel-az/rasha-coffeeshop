@@ -1,33 +1,31 @@
-.normal-item-container {
+.normal__item__container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  
+  gap: 14px;
+  padding-inline: 10px;
 }
 
-.normal-item {
+.normal__item {
   display: flex;
   border: 1px solid #AEA5A5;
-  border-radius: 15px;
+  border-radius: 17px;
 
   padding: 7px;
 }
 
-.normal-item__image {
+.normal__item__image {
   width: 222px;
-  height: 141px;
+  height: 100%;
   border-radius: 10px;
   object-fit: cover;
 }
 
-.normal-item__info__price__icon {
+.normal__item__info__price__icon {
   width: 20px;
   height: 20px;
 }
 
-.normal-item__info__price {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: 600;
+.normal__item {
+  display: grid;
+  grid-template-columns: 222px 1fr;
 }

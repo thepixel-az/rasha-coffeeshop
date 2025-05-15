@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from "react";
 import "./Items.css";
 import "./Normal.css";
 import { useSearchParams } from "react-router-dom";
+import { Price } from "@/shared/ui";
 
 type ItemsType = {
   imageUrl: string;
@@ -23,9 +24,9 @@ const NormalItem: FC<ItemsType> = ({
   ingredient,
 }) => {
   return (
-    <div className="normal-item-container">
-      <div className="normal-item">
-        <img className="normal-item__image" src="/NORMAL-IMAGE-FOR-MVP.png" alt={name} />
+    <div className="normal__item__container">
+      <div className="normal__item">
+        <img className="normal__item__image" src="/NORMAL-IMAGE-FOR-MVP.png" alt={name} />
         <div className="sticky-item__info">
           <div className="sticky-item__info__name">
             <h3>{name}</h3>
@@ -33,10 +34,7 @@ const NormalItem: FC<ItemsType> = ({
               <b>Tərkib:</b> {ingredient}
             </p>
           </div>
-          <div className="sticky-item__info__price__text">
-              <p>{price}</p>
-              <img className="sticky-item__info__price__text__icon" src="/icons/manats.svg" alt="price-icon" />
-            </div>
+          <Price price={price} theme="dark" />
         </div>
       </div>
     </div>
@@ -61,10 +59,7 @@ const StickyItem: FC<ItemsType> = ({
           </div>
           <div className="sticky-item__info__price">
             <img className="sticky-item__info__price__icon" src="/icons/price-icon.svg" alt="price-icon" />
-            <div className="sticky-item__info__price__text">
-              <p>{price}</p>
-              <img className="sticky-item__info__price__text__icon" src="/icons/manats.svg" alt="price-icon" />
-            </div>
+            <Price price={price} theme="dark" />
           </div>
         </div>
       </div>
