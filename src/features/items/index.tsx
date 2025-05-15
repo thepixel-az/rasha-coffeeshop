@@ -29,14 +29,14 @@ const NormalItem: FC<ItemsType> = ({
         <div className="sticky-item__info">
           <div className="sticky-item__info__name">
             <h3>{name}</h3>
-            <p>
+            <p className="sticky-item__ingridients">
               <b>Tərkib:</b> {ingredient}
             </p>
           </div>
-          <div className="normal-item__info__price">
-            <img className="normal-item__info__price__icon" src="/icons/price-icon.svg" alt="price-icon" />
-            <p>{price} ₼</p>
-          </div>
+          <div className="sticky-item__info__price__text">
+              <p>{price}</p>
+              <img className="sticky-item__info__price__text__icon" src="/icons/manats.svg" alt="price-icon" />
+            </div>
         </div>
       </div>
     </div>

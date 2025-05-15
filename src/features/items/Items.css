@@ -9,7 +9,6 @@
 .sticky-item-container, .normal-item-container {
   padding-inline: 10px;
 }
-
 .sticky-item {
   display: grid;
   grid-template-columns: 96px 1fr;
@@ -22,7 +21,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
+  width: max-content;
 }
 
 .sticky-item__info__name {
@@ -73,7 +73,12 @@
   padding: .45rem .70rem;
   color: #414141;
   display: flex;
+  font-weight: 500;
+  width: max-content;
   gap: 5px;
+}
+.sticky-item__ingridients{
+  text-wrap: letter;
 }
 
 .sticky-item__info__price__text__icon {
