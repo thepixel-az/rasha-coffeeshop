@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/rasha-coffeeshop/',
   plugins: [react()],
   resolve: {
     alias: {
