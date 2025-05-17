@@ -13,6 +13,7 @@ export default defineConfig({
     },
   },
   server: {
+    // allowedHosts: ['8cc3-185-146-112-94.ngrok-free.app'],
     proxy: {
       '/api': {
         target: process.env.VITE_API_URL,
