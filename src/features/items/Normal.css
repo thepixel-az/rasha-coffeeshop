@@ -1,0 +1,31 @@
+.normal__item__container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-inline: 10px;
+}
+
+.normal__item {
+  display: flex;
+  border: 1px solid #AEA5A5;
+  border-radius: 17px;
+
+  padding: 7px;
+}
+
+.normal__item__image {
+  width: 222px;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.normal__item__info__price__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.normal__item {
+  display: grid;
+  grid-template-columns: 222px 1fr;
+}

@@ -1,0 +1,75 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.container h2 {
+  font-size: 1.8rem;
+  margin: 1.5rem 0;
+  color: var(--inactive-color);
+}
+
+.container h3 {
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  color: var(--inactive-color);
+}
+
+.container p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.container ul {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.container li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.container li::before {
+  content: "•";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+}
+
+.container section {
+  margin-bottom: 3rem;
+}
+
+/* Form styles */
+.container form {
+  max-width: 600px;
+  margin: 2rem 0;
+}
+
+.container .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.container button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.container button:hover {
+  opacity: 0.9;
+} 

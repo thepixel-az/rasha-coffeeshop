@@ -1,0 +1,48 @@
+.button {
+  background: transparent;
+  border: 1px solid var(--inactive-border-color);
+  padding: .75rem 1rem;
+  border-radius: 2rem;
+  
+  font-size: .8rem;
+  color: var(--inactive-color);
+  line-height: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.active_button {
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  color: whitesmoke;
+}
+
+.active_button .button__content svg path {
+  fill: whitesmoke;
+}
+
+.button__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.button__content__text {
+  white-space: nowrap;
+}
+
+.button__content path {
+  fill: var(--inactive-color);
+}
+
+.button__content svg {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease-in-out;
+  width: .8rem;
+  height: .8rem;
+}
+
+.active_button .button__content svg {
+  transform: rotate(0deg);
+}
