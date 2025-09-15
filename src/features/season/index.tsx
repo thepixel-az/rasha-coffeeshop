@@ -2,9 +2,10 @@ import { useEffect, useRef } from "react";
 import "./Season.css";
 import { useMenuStore } from "@/shared/store";
 import { Price } from "@/shared/ui";
+import macha from "../../../public/images/rasha-wolt/matcha/Black_Matcha.jpeg"
 
 const seasonImages = [
-  { src: "/season/1.jpg", alt: "Season 1", id: 1 },
+  { src: "../../../public/images/rasha-wolt/matcha/Black_Matcha.jpeg", alt: "Season 1", id: 1 },
   { src: "/season/2.jpg", alt: "Season 2", id: 2 },
   { src: "/season/3.jpg", alt: "Season 3", id: 3 },
 ];
