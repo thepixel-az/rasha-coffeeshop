@@ -11,9 +11,9 @@
 }
 .sticky-item {
   display: grid;
-  grid-template-columns: 96px 1fr;
-  height: 123px;
-  border-radius: 10px;
+  grid-template-columns: 126px 1fr;
+  height: 140px;
+  border-radius: 14px;
   border: 1px solid #AEA5A5;
 }
 
@@ -60,9 +60,10 @@
 
 .sticky-item__image {
   object-fit: cover;
-  width: 56.46px;
-  height: 76.82px;
+  width: 88px;
+  height: 112px;
   place-self: center;
+  border-radius: 14px;
 }
 
 .sticky-item__ingridients{

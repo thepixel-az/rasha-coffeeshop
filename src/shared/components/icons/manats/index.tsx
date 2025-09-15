@@ -5,7 +5,6 @@ interface ManatsIconProps {
 }
 
 const ManatsIcon: FC<ManatsIconProps> = ({color}) => {
-  console.log(color);
   return (
     <svg width="14" height="10" viewBox="0 0 262 202" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M131 170.739C128.239 170.739 126 168.501 126 165.739V19.438C126 16.677 128.239 14.438 131 14.438C133.762 14.438 136 16.677 136 19.438V165.74C136 168.501 133.762 170.739 131 170.739Z" stroke={color ? color : "#414141"} stroke-width="27" />

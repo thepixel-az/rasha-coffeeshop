@@ -100,8 +100,8 @@ const CoffeeTypes: FC<CoffeeTypesProps> = ({ children }) => {
               ?.subcategories.find((sub) => sub.query === category);
             const baseName = inCategory?.name || "Coffee";
             const items = [
-              { name: `Hot ${baseName}`.replace(/\s+/g, " "), query: "hotcoffee", img: "/images/hot-coffee.png", isQulp: true },
-              { name: `Ice ${baseName}`.replace(/\s+/g, " "), query: "icecoffee", img: "/images/ice-coffee.png" },
+              { name: `İsti ${baseName}`.replace(/\s+/g, " "), query: "hotcoffee", img: "/images/hot-coffee.png", isQulp: true },
+              { name: `Soyuq ${baseName}`.replace(/\s+/g, " "), query: "icecoffee", img: "/images/ice-coffee.png" },
             ];
             return items.map((coffeeType, index) => (
               <CoffeeType

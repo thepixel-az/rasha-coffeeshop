@@ -1,5 +1,6 @@
 import Button from "./button";
 import Price from "./price";
+import Skeleton from "./skeleton";
 
-export { Button, Price };
+export { Button, Price, Skeleton };
 

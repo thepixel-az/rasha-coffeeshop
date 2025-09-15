@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# rasha-coffeeshop
-=======
 # Rasha Coffee Shop
 
 Welcome to the Rasha Coffee Shop repository! This project contains the codebase for our coffee shop's website and management system.
@@ -46,4 +43,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 + Normal Item size padding
 + Fix rerender
 + Hot and ice coffee border fix
->>>>>>> ae88953d3facf83c1e44dea27ecd0dbc9d9fb647
